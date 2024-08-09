@@ -1,5 +1,6 @@
 .env
 /env
 /db
+__pycache__/
 readme_env.txt
 requirements.txt
