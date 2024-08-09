@@ -1,0 +1,1 @@
+Just some example scripts to test AI
