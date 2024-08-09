@@ -1,0 +1,5 @@
+.env
+/env
+/db
+readme_env.txt
+requirements.txt
