@@ -2,5 +2,8 @@
 /env
 /db
 /__pycache__
+.DS_Store
 readme_env.txt
 requirements.txt
+packages.txt
+.gitignore
