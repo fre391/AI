@@ -44,7 +44,7 @@ print()
 print("--------------------------")
 print(f"Agent 1")
 print("--------------------------")
-agent1_query = "What is the price of this product and summarize its features?"
+agent1_query = "Wie teuer ist das Produkt und welche Features hat es?"
 print(f"Query: {agent1_query}")
 agent1_result = agent1.query(agent1_query)
 print(f"Result: {agent1_result}")
