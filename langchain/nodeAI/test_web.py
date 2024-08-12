@@ -12,10 +12,20 @@ from dotenv import load_dotenv
 load_dotenv()
 groq_api_key = os.environ["GROQ_API_KEY"]
 
+print()
+print()
+print("--------------------------")
+print(f"Tool 1")
+print("--------------------------")
 urls=[
     'https://nadine-foto.de/preise/',
 ]
-tool1 = WebTool(name="tool1", urls=urls, subpages=True, max_depth=1)
+#tool1 = WebTool(name="tool1", urls=urls, follow_redirects=True, max_depth=1)
+#tool1 = WebTool(name="tool1", urls=urls, follow_redirects=True, max_depth=0)
+#tool1 = WebTool(name="tool1", urls=urls, follow_redirects=False)
+tool1 = WebTool(name="tool1", urls=urls)
+print(f"Sources: {tool1.get_sources()}")
+print("--------------------------")
 
 agent1 = Agent(name="agent1", provider="Ollama", model="llama3.1", tool=tool1)
 print()

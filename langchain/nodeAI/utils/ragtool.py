@@ -1,46 +1,35 @@
-from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.document_loaders import PDFPlumberLoader
 from langchain_text_splitters import CharacterTextSplitter
-from langchain_community.vectorstores import FAISS
 
-class Document:
-    """
-    A simple class to mimic document structure with content and metadata.
-    """
-    def __init__(self, content, metadata=None):
-        self.page_content = content
-        self.metadata = metadata or {}
+from .tool import Tool, Document
 
-class RAGTool:
+class RAGTool(Tool):
     def __init__(self, name: str, file_paths:list):
         """
         Initialize the RAGTool class with a list of file paths.
         
         :param file_paths: List of paths to the files to be loaded and processed.
         """
-        self.name = name
-        self.file_paths = file_paths
-        self.documents = []
-        self.embeddings = HuggingFaceEmbeddings()
-        self.db = None
-        self.load_files()
+        super().__init__(name, file_paths) 
+        self.load()
     
-    def load_files(self):
+    def load(self):
         """
         Load and process a list of files based on their suffixes.
         
         :param file_paths: List of paths to the files.
         """
-        for file_path in self.file_paths:
-            if file_path.lower().endswith('.pdf'):
-                self.load_pdf(file_path)
-            elif file_path.lower().endswith('.txt'):
-                self.load_txt(file_path)
+        for source in self.sources:
+            print(f"Loading {source}...")
+            if source.lower().endswith('.pdf'):
+                self.load_pdf(source)
+            elif source.lower().endswith('.txt'):
+                self.load_txt(source)
             else:
-                print(f"Unsupported file type: {file_path}")
-        
-        # Final reprocessing after all files are loaded
-        self._reprocess_documents()
+                print(f"Unsupported file type: {source}")
+            print()
+
+        super().load()
     
     def load_pdf(self, file_path):
         """
@@ -90,26 +79,3 @@ class RAGTool:
         print(f"   {self.name} - Adding TXT chunks to the collection...")
         self.documents.extend(texts)
     
-    def _reprocess_documents(self):
-        """
-        Recreate the FAISS index based on the updated documents.
-        """
-        if not self.documents:
-            raise RuntimeError("No documents loaded. Please load at least one document.")
-        
-        print(f"   {self.name} - Creating embeddings for document chunks...")
-        self.db = FAISS.from_documents(self.documents, self.embeddings)
-        
-        # Print the number of documents in FAISS index using ntotal
-        num_documents = self.db.index.ntotal
-        print(f"   {self.name} - Number of chunks in FAISS index: {num_documents}")
-
-    def get_document_retriever(self):
-        """
-        Get the document retriever from the FAISS index.
-        
-        :return: FAISS retriever
-        """
-        if not self.db:
-            raise RuntimeError("No documents have been processed. Please load documents before getting retriever.")
-        return self.db.as_retriever()

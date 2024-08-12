@@ -22,6 +22,8 @@ tool1 = RAGTool(
     "/Users/markusfreyt/Development/Projects/AI/langchain/docs/TPLINK1.txt"
     ]
 )
+print(f"Sources: {tool1.get_sources()}")
+print("--------------------------")
 
 print()
 print("--------------------------")
@@ -33,6 +35,8 @@ tool2 = RAGTool(
     "/Users/markusfreyt/Development/Projects/AI/langchain/docs/TPLINK2.txt"
     ]
 )
+print(f"Sources: {tool2.get_sources()}")
+print("--------------------------")
 
 # Initialize and set up Agents
 agent1 = Agent(name="agent1", provider="Ollama", model="llama3.1", tool=tool1)
