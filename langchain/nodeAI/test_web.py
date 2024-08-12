@@ -29,7 +29,5 @@ print(f"Query: {agent1_query}")
 agent1_result = agent1.query(agent1_query)
 print(f"Result: {agent1_result}")
 print("--------------------------")
-print(f"Status: {print(json.dumps(agent1.get_status(), indent=4))}")
+print(f"Status: {json.dumps(agent1.get_status(), indent=4)}")
 print("--------------------------")
-
-

@@ -49,7 +49,7 @@ print(f"Query: {agent1_query}")
 agent1_result = agent1.query(agent1_query)
 print(f"Result: {agent1_result}")
 print("--------------------------")
-print(f"Status: {print(json.dumps(agent1.get_status(), indent=4))}")
+print(f"Status: {json.dumps(agent1.get_status(), indent=4)}")
 print("--------------------------")
 
 
@@ -63,7 +63,7 @@ print(f"Query: {agent2_query}")
 agent2_result = agent2.query(agent2_query)
 print(f"Result: {agent2_result}")
 print("--------------------------")
-print(f"Status: {print(json.dumps(agent2.get_status(), indent=4))}")
+print(f"Status: {json.dumps(agent2.get_status(), indent=4)}")
 print("--------------------------")
 
 
@@ -78,5 +78,5 @@ context = f"Agent 1 Result: {agent1_result}\n\nAgent 2 Result: {agent2_result}"
 agent3_result = agent3.query(agent3_query, context)
 print(f"Result: {agent3_result}")
 print("--------------------------")
-print(f"Status: {print(json.dumps(agent3.get_status(), indent=4))}")
+print(f"Status: {json.dumps(agent3.get_status(), indent=4)}")
 print("--------------------------")

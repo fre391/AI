@@ -31,6 +31,7 @@ class Agent:
     
     def get_status(self):
         status = {}
+        print(self.input)
         status['input'] = self.input
         status['context'] = self.context
         status['output'] = self.output
