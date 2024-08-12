@@ -35,8 +35,8 @@ tool2 = RAGTool(
 )
 
 # Initialize and set up Agents
-agent1 = Agent(name="agent1", provider="Ollama", model="llama3.1", rag_tool=tool1)
-agent2 = Agent(name="agent2", provider="Ollama", model="llama3.1", rag_tool=tool2)
+agent1 = Agent(name="agent1", provider="Ollama", model="llama3.1", tool=tool1)
+agent2 = Agent(name="agent2", provider="Ollama", model="llama3.1", tool=tool2)
 agent3 = Agent(name="agent3", provider="ChatGroq", model="llama3-8b-8192", api_key=groq_api_key)
 
 print()

@@ -85,7 +85,7 @@ class RAGTool:
         texts = text_splitter.split_documents([document])
         print(f"   {self.name} - Number of chunks: {len(texts)}")
         for text in texts:
-            print("   {self.name} - Content: ", text.page_content.replace('\n', '')[:50])
+            print(f"   {self.name} - Content: ", text.page_content.replace('\n', '')[:50])
 
         print(f"   {self.name} - Adding TXT chunks to the collection...")
         self.documents.extend(texts)

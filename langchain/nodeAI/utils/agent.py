@@ -6,7 +6,7 @@ from langchain.chains import RetrievalQA
 from .ragtool import RAGTool
 
 class Agent:
-    def __init__(self, name: str, provider: str,model: str, api_key: str = None, rag_tool: RAGTool = None):
+    def __init__(self, name: str, provider: str,model: str, api_key: str = None, tool: RAGTool = None):
         """
         Initialize the Agent class with a specific model and optionally with RAGTool for document processing.
         
@@ -19,7 +19,7 @@ class Agent:
         self.configuration['provider'] = provider
         self.configuration['model_name'] = model
         self.configuration['api_key'] = api_key
-        self.configuration['rag_tool'] = rag_tool
+        self.configuration['tool'] = tool
 
         self.input = ""
         self.context = ""
@@ -44,8 +44,8 @@ class Agent:
         try:
             if self.configuration['provider'] == 'Ollama':
                 llm = Ollama(model=self.configuration['model_name'])
-                if self.configuration['rag_tool']:
-                    retriever = self.configuration['rag_tool'].get_document_retriever()
+                if self.configuration['tool']:
+                    retriever = self.configuration['tool'].get_document_retriever()
                     self.chain = RetrievalQA.from_chain_type(llm, retriever=retriever)
                 else:
                     retriever = None
@@ -58,8 +58,8 @@ class Agent:
                 # Initialize ChatGroq specific setup here
                 llm = ChatGroq(model=self.configuration['model_name'], api_key=self.configuration['api_key'])
 
-                if self.configuration['rag_tool']:
-                    retriever = self.configuration['rag_tool'].get_document_retriever()
+                if self.configuration['tool']:
+                    retriever = self.configuration['tool'].get_document_retriever()
                     self.chain = RetrievalQA.from_chain_type(llm, retriever=retriever)
                 else:
                     retriever = None
