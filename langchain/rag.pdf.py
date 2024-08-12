@@ -10,7 +10,7 @@ from langchain_community.document_loaders import PDFPlumberLoader
 warnings.filterwarnings('ignore')
 
 print("Load Data...")
-loader = PDFPlumberLoader("/Users/markusfreyt/Development/Projects/AI/langchain/docs/test.pdf")
+loader = PDFPlumberLoader("/Users/markusfreyt/Development/Projects/AI/langchain/docs/Blockchain.pdf")
 docs = loader.load()
 
 print("Split the document into chunks...")
@@ -31,7 +31,7 @@ chain = RetrievalQA.from_chain_type(
     llm,
     retriever=db.as_retriever()
 )
-question = "Can you please summarize the document"
+question = "Schreibe eine Zusammenfassung"
 result = chain.invoke({"query": question})
 
 print("Output Result...")
