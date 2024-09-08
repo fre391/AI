@@ -50,7 +50,7 @@ writeBlogPost = Task(
 crew = Crew( 
   agents=[explainer, blogWriter],
   tasks=[explainSnippet, writeBlogPost], 
-  verbose=0, 
+  verbose=1, 
   process=Process.sequential )
 
 # Execute the process and print the output 

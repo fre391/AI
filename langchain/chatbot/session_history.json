@@ -1,0 +1,64 @@
+{
+    "ABK": [
+        {
+            "type": "human",
+            "content": "Hi"
+        },
+        {
+            "type": "ai",
+            "content": "Hallo! Ich bin hier, um dir zu helfen. Wie kann ich dir heute helfen? Hast du eine bestimmte Frage oder ein bestimmtes Thema, \u00fcber das du sprechen m\u00f6chtest?"
+        }
+    ],
+    "ABC": [
+        {
+            "type": "human",
+            "content": "Hi"
+        }
+    ],
+    "ABF": [
+        {
+            "type": "human",
+            "content": "Hi"
+        },
+        {
+            "type": "ai",
+            "content": "Hallo! Ich bin hier, um dir zu helfen. Wie kann ich dir heute helfen? Hast du eine bestimmte Frage oder ein bestimmtes Thema, \u00fcber das du sprechen m\u00f6chtest?"
+        },
+        {
+            "type": "human",
+            "content": "Wie gehts?"
+        },
+        {
+            "type": "ai",
+            "content": "Ich bin ein Computerprogramm, also habe ich keine Emotionen oder Gef\u00fchle wie Menschen. Ich bin hier, um dir zu helfen und Informationen zu liefern. Ich bin immer \"online\" und bereit, wenn du eine Frage hast oder Hilfe ben\u00f6tigst.\n\nWie kann ich dir heute helfen?"
+        },
+        {
+            "type": "human",
+            "content": "Wie heisse ich?"
+        },
+        {
+            "type": "ai",
+            "content": "Ich bin ein Computerprogramm, ein sogenannter \"Chatbot\" oder \"Assistent\". Ich habe keine pers\u00f6nlichen Namen, sondern bin einfach ein Hilfsprogramm, das dir bei Fragen und Aufgaben unterst\u00fctzt. Du kannst mich also einfach als \"Assistent\" oder \"Hilfsprogramm\" bezeichnen."
+        }
+    ],
+    "BBB": [
+        {
+            "type": "human",
+            "content": "Hi"
+        },
+        {
+            "type": "ai",
+            "content": "Hallo! Ich bin hier, um dir zu helfen. Wie kann ich dir heute helfen? Hast du eine bestimmte Frage oder ein bestimmtes Thema, \u00fcber das du sprechen m\u00f6chtest?"
+        }
+    ],
+    "_ABC": [
+        {
+            "type": "human",
+            "content": "Hi"
+        },
+        {
+            "type": "ai",
+            "content": "Hallo! Ich bin hier, um dir zu helfen. Wie kann ich dir heute helfen? Hast du eine bestimmte Frage oder ein bestimmtes Thema, \u00fcber das du sprechen m\u00f6chtest?"
+        }
+    ]
+}

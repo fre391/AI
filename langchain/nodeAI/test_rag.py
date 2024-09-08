@@ -19,7 +19,7 @@ print("--------------------------")
 tool1 = RAGTool(
     name ="tool1",
     file_paths=[
-    "/Users/markusfreyt/Development/Projects/AI/langchain/docs/TPLINK1.txt"
+    "/Users/markusfreyt/Development/Projects/Python/AI/langchain/docs/TPLINK1.txt"
     ]
 )
 print(f"Sources: {tool1.get_sources()}")
@@ -32,7 +32,7 @@ print("--------------------------")
 tool2 = RAGTool(
     name ="tool2",
     file_paths=[
-    "/Users/markusfreyt/Development/Projects/AI/langchain/docs/TPLINK2.txt"
+    "/Users/markusfreyt/Development/Projects/Python/AI/langchain/docs/TPLINK2.txt"
     ]
 )
 print(f"Sources: {tool2.get_sources()}")
